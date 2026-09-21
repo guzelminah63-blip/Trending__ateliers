@@ -162,50 +162,7 @@
 
 <footer>
   <p>&copy; 2026 Gleamguzel Boutique. All Rights Reserved.</p>
-</footer>
-<script>
-  // Get the cart from storage, or start empty if nothing saved yet
-  function getCart() {
-    return JSON.parse(localStorage.getItem("cart")) || [];
-  }
-
-  // Save the cart back to storage
-  function saveCart(cart) {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }
-
-  // Add a product to the cart
-  function addToCart(button) {
-    const name = button.getAttribute("data-name");
-    const price = parseFloat(button.getAttribute("data-price"));
-    const img = button.getAttribute("data-img");
-
-    let cart = getCart();
-
-    // If item already in cart, increase quantity. Otherwise add new.
-    let existing = cart.find(item => item.name === name);
-    if (existing) {
-      existing.qty += 1;
-    } else {
-      cart.push({ name: name, price: price, img: img, qty: 1 });
-    }
-
-    saveCart(cart);
-    alert(name + " added to cart!");
-    updateCartCount();
-  }
-
-  // Show how many items are in the cart, in the nav (optional badge)
-  function updateCartCount() {
-    const cart = getCart();
-    const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
-    const badge = document.getElementById("cart-count");
-    if (badge) badge.textContent = totalItems;
-  }
-
-  // Run this every time a page loads
-  updateCartCount();
-</script>
+  </footer>
 
 </body>
 </html>
