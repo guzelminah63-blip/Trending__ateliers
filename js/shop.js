@@ -3,15 +3,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   addButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      const productName = button.getAttribute("data-name");
-      const productPrice = button.getAttribute("data-price");
-      const productImg = button.getAttribute("data-img");
+      // Find the product card this button belongs to
+      const card = button.closest(".product-card");
+
+      // Read the image directly from the <img> tag inside that card
+      const imgElement = card.querySelector("img");
+
+      const product = {
+        name: button.getAttribute("data-name"),
+        price: button.getAttribute("data-price"),
+        img: imgElement.getAttribute("src") // grabbed straight from the real image
+      };
 
       let cart = JSON.parse(localStorage.getItem("cart")) || [];
-      cart.push({ name: productName, price: productPrice, img: productImg });
+      cart.push(product);
       localStorage.setItem("cart", JSON.stringify(cart));
 
-      alert(productName + " added to cart!");
+      alert(product.name + " added to cart!");
     });
   });
 });

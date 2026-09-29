@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Gleamguzel | Sign Up</title>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -35,12 +34,16 @@
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   }
 
-  header .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
+  .logo-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 32px;
+    font-weight: 700;
     color: var(--plum);
-    font-weight: bold;
+    letter-spacing: 1px;
   }
+
+  .logo-gold { color: var(--gold); }
+  .logo-flower { color: var(--pink); font-size: 20px; margin: 0 1px; display: inline-block; }
 
   nav ul {
     display: flex;
@@ -103,8 +106,7 @@
   }
 
   .form-container p a:hover { color: var(--gold); }
-
-  footer {
+footer {
   text-align: center;
   padding: 25px;
   background-color: var(--plum);
@@ -136,34 +138,16 @@
 .social-icon svg {
   flex-shrink: 0;
 }
-  .logo-text {
-  font-family: 'Dancing Script', cursive;
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--plum);
-  letter-spacing: 1px;
-}
-
-.logo-gold {
-  color: var(--gold);
-}
-
-.logo-flower {
-  color: var(--pink);
-  font-size: 20px;
-  margin: 0 1px;
-  display: inline-block;
-}
 </style>
 </head>
 <body>
 
 <header>
   <div class="logo">
-  <span class="logo-text">
-    <span class="logo-gold">G</span>l<span class="logo-flower">✿</span>am<span class="logo-gold">g</span>üz<span class="logo-flower">✿</span>l
-  </span>
-</div>
+    <span class="logo-text">
+      <span class="logo-gold">G</span>l<span class="logo-flower">✿</span>am<span class="logo-gold">g</span>üz<span class="logo-flower">✿</span>l
+    </span>
+  </div>
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -175,16 +159,15 @@
 
 <div class="form-container">
   <h2>Create an Account</h2>
-  <form>
-    <input type="text" placeholder="Full Name" required>
-    <input type="email" placeholder="Email Address" required>
-    <input type="password" placeholder="Password" required>
-    <input type="password" placeholder="Confirm Password" required>
+  <form id="signup-form">
+    <input type="text" id="signup-name" placeholder="Full Name" required>
+    <input type="email" id="signup-email" placeholder="Email Address" required>
+    <input type="password" id="signup-password" placeholder="Password" required>
+    <input type="password" id="signup-confirm" placeholder="Confirm Password" required>
     <button type="submit">Sign Up</button>
   </form>
   <p>Already have an account? <a href="login.html">Login</a></p>
 </div>
-
 <footer>
   <p>&copy; 2026 Gleamguzel Boutique. All Rights Reserved.</p>
   <div class="social-links">
@@ -204,5 +187,9 @@
     </a>
   </div>
 </footer>
+
+
+<script type="module" src="js/signup.js"></script>
+
 </body>
 </html>
